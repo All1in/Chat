@@ -8,7 +8,7 @@ const socket = io.connect('http://localhost:5000')
 
 function App() {
   const [userName, setUserName] = useState('')
-  const [room, setRoom] = useState();
+  const [room, setRoom] = useState('');
 
   const joinRoom = () => {
     if(userName !== '' && room !== '') {
@@ -22,8 +22,16 @@ function App() {
   return (
      <div>
          <h3>Join a Chat</h3>
-         <input type="text" placeholder='John...' onChange={changer} />
-         <input type="text" placeholder='Room Id' onChange={changerRoom}/>
+         <input
+             type="text"
+             placeholder='John...'
+             onChange={changer}
+         />
+         <input
+             type="text"
+             placeholder='Room Id'
+             onChange={changerRoom}
+         />
          <button onClick={joinRoom}> Join a Room </button>
 
          <Chat
