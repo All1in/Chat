@@ -17,7 +17,7 @@ function App() {
         setShowChat(true)
     }
   }
-  
+
   const changer = event => setUserName(event.target.value)
   const changerRoom = event => setRoom(event.target.value)
 
@@ -26,7 +26,11 @@ function App() {
          {!showChat ?
              (
                  <div className='joinChatContainer'>
-                    <ChatJoin />
+                    <ChatJoin
+                        joinRoom={joinRoom}
+                        changer={changer}
+                        changerRoom={changerRoom}
+                    />
                  </div>
              )
             : (
